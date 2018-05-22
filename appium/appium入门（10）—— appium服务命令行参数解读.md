@@ -1,37 +1,50 @@
-## 基本的定位元素方法
-### 通过id定位元素
-driver.find_element_by_id("com.thinkive.future.dev.standard:id/iv_quotation_futures_search")
+命令行启动配置成功后，直接通过appium启动。
 
-### 通过class定位元素
-driver.find_elements_by_class_name("android.support.v7.app.ActionBar$Tab")
 
-## 通过css定位元素
-移动端此方法比较少用
+```
+C:\Users\lei>appium -h
+usage: C:\Users\lei\AppData\Roaming\npm\node_modules\appium\build\lib\main.js
+       [-h] [-v] [--shell] [--reboot] [--ipa IPA] [-a ADDRESS] [-p PORT]
+       [-ca CALLBACKADDRESS] [-cp CALLBACKPORT] [-bp BOOTSTRAPPORT]
+       [-r BACKENDRETRIES] [--session-override] [-l] [-g LOG]
+    ...
+    ...
 
-## 通过xpath定位元素
-### 通过绝对路径
 
-### 通过相对路径
+A webdriver-compatible server for use with native and hybrid iOS and Android
+applications.
 
-//className[@属性='value']
-//className[contains(@属性,"value")]
-//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.support.v7.app.ActionBar$Tab[0]/android.widget.TextView
+Optional arguments:
+  -h, --help            Show this help message and exit.
+  -v, --version         Show program's version number and exit.
+  --shell               Enter REPL mode
+  --reboot              (Android-only) reboot emulator after each session and
+                        kill it at the end
+  --ipa IPA             (IOS-only) abs path to compiled .ipa file
+  -a ADDRESS, --address ADDRESS
+                        IP Address to listen on
+  -p PORT, --port PORT  port to listen on
+  -ca CALLBACKADDRESS, --callback-address CALLBACKADDRESS
+                        callback IP Address (default: same as --address)
+  -cp CALLBACKPORT, --callback-port CALLBACKPORT
+                        callback port (default: same as port)
+ ...
+ ...
+ ...
+
+```
+
+在此记录几个常用参数命令
+- **-a , --address:** 修改appium的监听ip地址
+- **-p , --port:** 修改appium的监听端口,默认4723
+- **-bp ,--bootstrap-port:** 指定android设备连接的端口号
+- **-g :** 将日志输出到指定文件
+- **--session-override :** 如果有session冲突，允许session覆盖.
+    - 不设置该参数，那么当测试异常退出时，Appium服务器的session可能还存在，下一条用例尝试建立session就会失败。
+- **-U , --udid:** 连接物理设备的唯一设备标识符
+
 eg:
-```
-#已知文本信息
-//android.widget.TextView[@text='夜盘行情']
-```
-//*[@resource-id='com.huawei.works:id/tv_menu_item_text' and @text='发博客']
+appium -p 4700 -bp 4701 -U 127.0.0.1:21503
 
 
-```
-//*[not(ancestor-or-self::UIATableView)]
-//*[not(ancestor-or-self::UIAStatusBar)]
-//*[@resource-id='com.xueqiu.android:id/action_search']/parent::*
-//*[@resource-id='com.xueqiu.android:id/action_search']
-//*[contains(name(), 'Text')]
-//*[@resource-id!='' and not(contains(name(), 'Layout'))]
-//*[../*[@selected='true']]
-```
-
-
+appium的启动端口

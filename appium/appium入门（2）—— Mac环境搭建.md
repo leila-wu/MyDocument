@@ -33,7 +33,9 @@ brew是mac的包管理工具，就像pip是python的包管理工具，yum是redh
     - 删除node ```brew r -g node```
     
 
-注：由于我的系统升级到最新后，通过brew直接下载了最新版本的node，导致对appium的不兼容。最后删除了node，手动从官网下载旧版本的node安装，后续流程得以继续。
+**注1** ：由于我的系统升级到最新后，通过brew直接下载了最新版本的node，导致对appium的不兼容。最后删除了node，手动从官网下载旧版本的node安装，后续流程得以继续。
+
+**注2** ：apppium 1.8.0 最高支持nodejs 9的版本
 
 #### jdk
 - 访问Oracle官网 http://www.oracle.com，浏览到首页的底部菜单,点击'Java for Developers' 

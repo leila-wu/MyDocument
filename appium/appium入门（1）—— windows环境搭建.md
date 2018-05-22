@@ -113,6 +113,8 @@ appium-desktop开源项目地址：https://github.com/appium/appium-desktop
 
 appium-desktop下载地址：https://github.com/appium/appium-desktop/releases
 
+国内整理地址： http://shell.testing-studio.com/download/appiumdesktop/
+
 当前环境为windwos，选择appium-desktop-Setup-1.5.0-ia32.exe下载安装，安装过程与其他软件一致，在此不多做介绍。
 
 **desktop的使用：**
