@@ -1,0 +1,158 @@
+---
+pluginList:
+- "com.testerhome.appcrawler.plugin.TagLimitPlugin"
+logLevel: "TRACE"
+saveScreen: true
+reportTitle: "期货大师"
+screenshotTimeout: 20
+currentDriver: "Android"
+tagLimitMax: 2
+showCancel: false
+maxTime: 10800
+resultDir: "Android_20180510103345"
+capability:
+  newCommandTimeout: 120
+  launchTimeout: 120000
+  appium: "http://127.0.0.1:4723/wd/hub"
+  platformVersion: ""
+  platformName: ""
+  autoWebview: "false"
+  autoLaunch: "true"
+  noReset: "false"
+androidCapability:
+  deviceName: "demo"
+  appPackage: "com.thinkive.future.dev.standard"
+  appActivity: "com.thinkive.futureshl.activity.LauncherActivity"
+  app: ""
+iosCapability:
+  bundleId: ""
+  autoAcceptAlerts: "true"
+  platformVersion: "9.2"
+  deviceName: "iPhone 6"
+xpathAttributes:
+- "name"
+- "label"
+- "value"
+- "resource-id"
+- "content-desc"
+- "index"
+- "text"
+defineUrl: []
+baseUrl: []
+appWhiteList: []
+maxDepth: 8
+headFirst: true
+enterWebView: true
+urlBlackList: []
+urlWhiteList: []
+defaultBackAction: []
+backButton: []
+firstList: 
+- "//*[contains(@resource-id,'quntation_future_detial_wrap_more')]"
+- ".*最新*."
+- ".*涨幅*."
+- ".*成交量*."
+- ".*合约名称*."
+- ".*刷新*."
+- ".*明细*."
+- ".*F10*."
+- ".*设置*."
+- ".*撤单*."
+- ".*委托*."
+- ".*成交*."
+- ".*交易设置*."
+- ".*条件单*."
+- ".*资金详情*."
+- ".*交易日志*."
+- ".*结算单查询*."
+- ".*合约列表*."
+- ".*保证金监控中心*."
+- ".*确认*."
+selectedList:
+- "//*[@clickable='true']//android.widget.TextView[string-length(@text)>0 and string-length(@text)<20]"
+- "//android.widget.EditText"
+- "//*[contains(name(), 'Button')]"
+- "//*[@clickable='true' and contains(name(), 'Image')]"
+- "//*[@clickable='true' and contains(name(), 'TextView')]"
+- "//*[@clickable='true' and contains(name(), 'LinearLayout')]"
+lastList: 
+- "自选"
+- "外盘"
+- ".*保存参数*."
+- ".*恢复默认*."
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/indicator']//*"
+blackList:
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/rl_title']//*"
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/banner_ad']//*"
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/ed_no']"
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/bt_mlogin']"
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/rl_mainpage_notice']//*"
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/ll_ad2']//*"
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/ll_hd']//*"
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/zoushi_head_Rl']//*"
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/module_five_col_1_listview']//*"
+- "//*[@resource-id='com.thinkive.future.dev.standard:id/item_all_listactivity_itemView']//*"
+- ".*开户.*"
+- "^[a-zA-Z].*[0-9]{4}"
+- ".*退出.*"
+- ".*修改.*"
+- ".*权益.*"
+- "风险度"
+- ".*可用.*"
+- ".*泰国.*"
+- ".*台湾.*"
+- ".*韩国.*"
+- ".*泛欧.*"
+- ".*迪拜.*"
+- ".*伦敦.*"
+- ".*马来西亚.*"
+- ".*纽约.*"
+- ".*欧洲.*"
+- ".*我的.*"
+triggerActions: 
+- xpath: "//*[contains(@resource-id, 'more_listpop_item_text') and contains(@text, '明细')]"
+  times: 1
+- xpath: "//*[contains(@resource-id, 'more_listpop_item_text') and contains(@text, '设置')]"
+  times: 1
+- xpath: "//*[contains(@resource-id, 'more_listpop_item_text') and contains(@text, 'F10')]"
+  times: 2
+- xpath: "//*[contains(@resource-id, 'ft_trade_menu_setting') and contains(@text, '交易设置')]"
+  times: 1
+- xpath: "//*[contains(@resource-id, 'ft_trade_menu_setting') and contains(@text, '条件单')]"
+  times: 1
+- xpath: "//*[contains(@resource-id, 'ft_trade_menu_setting') and contains(@text, '资金详情')]"
+  times: 1
+- xpath: "//*[contains(@resource-id, 'quntation_future_detial_wrap_more')]"
+  times: 4
+- xpath: "//*[contains(@resource-id, 'ft_header_refresh')]"
+  times: 1
+- xpath: "//*[contains(@resource-id, 'ft_trade_menu_transfer')]"
+  times: 8
+- xpath: "//*[contains(@resource-id, 'search_edittext')]"
+  action: mh
+  times: 1
+- xpath: "//*[contains(@resource-id, 'key3_instrument_name')]"
+  action: sr
+  times: 1
+autoCrawl: true
+asserts: []
+tagLimit: []
+testcase:
+  name: demo1
+  steps:
+  - xpath: //*
+    action: driver.swipe(0.5, 0.8, 0.5, 0.2)
+  - xpath: "//*[contains(@resource-id, 'item_text') and contains(@text, '交易')]"
+    action: click
+  - xpath: "//*[contains(@resource-id, 'tradeHome_header01') and contains(@text, '下单')]"
+    action: click
+  - xpath: "//*[contains(@resource-id, 'ft_header_site_select') and contains(@text, '站点')]"
+    action: click
+  - xpath: "//*[contains(@resource-id, 'counterSiteSelect_name') and contains(@text, '首次登录(8080)')]"
+    action: click
+  - xpath: "//*[@resource-id='com.thinkive.future.dev.standard:id/trade_login_account']"
+    action: "05197"
+  - xpath: "//*[@password='true' and contains(@resource-id, 'trade_login_pd')]"
+    action: "12345678a"
+  - xpath: "//*[contains(@resource-id, 'trade_login_btn') and contains(@text, '登录')]"
+    action: click

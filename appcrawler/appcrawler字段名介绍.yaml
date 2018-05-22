@@ -1,0 +1,66 @@
+- yaml文件主要参数
+  - pluginList：插件列表
+  - logLevel：日志级别
+  - saveScreen：是否截图 true/false
+  - reportTitle：报告标题
+  - screenshotTimeout：截图超时设置
+  - currentDriver：当前驱动
+  - tagLimitMax：相同控件最大点击数
+  - tagLimit：特定控件多遍历几次（xpath,count）
+  - showCancel 结果报告是否展示没有遍历被取消的控件
+  - maxTime：最大运行时间
+  - resultDir：结果目录
+  - devices （appium的capability通用配置）
+    - platformName
+    - platformVersion
+    - deviceName
+  - capability
+    - appActivity
+    - appium
+    - app
+    - appPackage
+  - androidCapability（android专属配置 最后会和capability合并）
+    - app
+    - appPackage
+    - appActivity
+  - iosCapability （ios专属配置 最后会和capability合并）
+    - app
+    - bundleId
+    - autoAcceptAlerts
+  - xpathAttributes：用来设定可以用那些种类型去定位控件
+  - defineUrl：用来确定url的元素定位xpath 他的text会被取出当作url因素
+  - baseUrl：设置一个起始url和maxDepth, 用来在遍历时候指定初始状态和遍历深度
+  - appWhiteList
+  - maxDepth：默认的最大深度10, 结合baseUrl可很好的控制遍历的范围
+  - headFirst：是否是前向遍历或者后向遍历
+  - enterWebView：是否遍历WebView控件
+  - urlBlackList：url黑名单.用于排除某些页面
+  - urlWhiteList：url白名单, 第一次进入了白名单的范围, 就始终在白名单中. 不然就算不在白名单中也得遍历.
+                上层是白名单, 当前不是白名单才需要返回
+  - defaultBackAction：默认的返回动作
+  - backButton：后退按钮标记, 主要用于iOS, xpath
+  - firstList：优先遍历元素
+  - selectedList：默认遍历列表
+  - lastList：最后遍历列表
+  -	blackList 排除某些控件
+  - triggerActions：和testcase类似，但无先后顺序，遍历过程中定位元素做交互
+  - xpath
+    action
+    times 执行次数
+  - autoCrawl 执行完testcase是否做遍历 true/false
+  - assert 断言，用于是否失败的判断
+    - name
+    - steps
+  - testcase 每次遍历开始前，跑的用例
+    - name
+    - steps
+      - given
+      - when
+      - then
+      - xpath
+      - action
+  - beforeElementAction：一般不用，元素动作之前要运行动作
+  - afterElementAction：一般不用，元素动作之后要运行动作
+  - afterUrlFinished
+  - monkeyEvents：monkey的点击数
+  - monkeyRunTimeSeconds：monkey运行时间
